@@ -4,7 +4,10 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
 @Table(name="games")
@@ -12,6 +15,9 @@ import javax.persistence.Table;
 
 public class ModelGames_list implements Serializable {
 	
+		@Id
+		@GeneratedValue(strategy=GenerationType.AUTO)
+		
 		@Column(name="id")
 		private int id;
 		
