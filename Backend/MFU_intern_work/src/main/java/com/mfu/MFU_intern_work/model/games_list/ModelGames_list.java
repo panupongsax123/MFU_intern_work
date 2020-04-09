@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 
 @Entity
-@Table(name="games")
+@Table(name="games_list")
 
 
 public class ModelGames_list implements Serializable {
