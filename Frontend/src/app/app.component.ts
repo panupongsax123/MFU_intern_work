@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   List() {
-    // console.log("List Book");
+    console.log("List Games");
     this.router.navigate(["list"]);
   }
 }
