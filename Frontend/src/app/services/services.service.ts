@@ -11,7 +11,7 @@ export class ServicesService {
 
   Url = 'http://localhost:4200/';
 
-  getBook(): Observable<any> {
+  getGame(): Observable<any> {
     return this.http.get(this.Url + "listall");
   }
 }
