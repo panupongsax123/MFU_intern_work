@@ -11,8 +11,9 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  List() {
+  Home(){
+
     console.log("List Games");
-    this.router.navigate(["list"]);
+    this.router.navigate(["Home"]);
   }
 }
