@@ -1,7 +1,6 @@
-package com.mfu.MFU_intern_work.model.games_list;
+package com.mfu.MFU_intern_work.modelGames;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,10 +12,11 @@ import javax.persistence.Id;
 @Table(name="games_list")
 
 
-public class ModelGames_list implements Serializable {
+public class ModelGames implements Serializable {
 	
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
+		
 		
 		@Column(name="id")
 		private int id;
@@ -36,9 +36,13 @@ public class ModelGames_list implements Serializable {
         @Column(name="produce_by")
         private String produce_by;
 
-		public ModelGames_list(int id, String name, String category, String release_date, int price, String produce_by) {
+        public ModelGames() {
+	    }
+
+		
+        public ModelGames(int id, String name, String category, String release_date, int price, String produce_by) {
 			
-			
+        	super();
 			this.id = id;
 			this.name = name;
 			this.category = category;
@@ -94,9 +98,7 @@ public class ModelGames_list implements Serializable {
 		public void setProduce_by(String produce_by) {
 			this.produce_by = produce_by;
 		}
-        
-        
-        
+
 	
 }
 
