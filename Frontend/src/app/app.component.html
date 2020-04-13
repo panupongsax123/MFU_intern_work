@@ -1,10 +1,9 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="https://spidyhero.files.wordpress.com/2019/02/logo-mfu-v2.png?w=676">
-</div> &nbsp; &nbsp;
-<div style="text-align:center">
-<button style="height:55px;width:130px" class="btn btn-info" (click)="Home()" >Enter Website</button> 
-</div>
-<router-outlet></router-outlet>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" routerLink="/home" routerLinkActive="active">Home</a>
+      <a class="navbar-brand" routerLink="/list" routerLinkActive="active">List</a>
+      <a class="navbar-brand" routerLink="/about" routerLinkActive="active">About Us</a>
+    </nav>
+    <router-outlet></router-outlet>
+    

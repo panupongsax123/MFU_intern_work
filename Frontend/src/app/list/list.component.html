@@ -1,0 +1,27 @@
+    <div class="card">
+        <div class="card-header">
+            <h3>Game List</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-center">
+                <thead>
+                    <tr class="text-center">
+                        <th>ID</th>
+                        <th>Game Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center" *ngFor="let data of gamelist">
+                        <td>{{data.id}}</td>
+                        <td>{{data.name}}</td>
+                        <td>
+                            <button (click)="Edit(data.id)" class="btn btn-warning" style="margin-left: 10px;">Detail</button>
+                            <button (click)="Delete()"class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
