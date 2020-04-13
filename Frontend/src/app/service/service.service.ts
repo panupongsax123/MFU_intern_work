@@ -9,9 +9,9 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  Url = 'http://localhost:4200/Home/';
+  Url = 'http://localhost:4200/games';
 
-  getBook(): Observable<any> {
+  getGames(): Observable<any> {
     return this.http.get(this.Url + "listall");
   }
 }
