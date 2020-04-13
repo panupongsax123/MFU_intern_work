@@ -17,13 +17,14 @@ import com.mfu.MFU_intern_work.gamesService.GamesService;
 import com.mfu.MFU_intern_work.modelGames.ModelGames;
 
 @RestController
-@RequestMapping("/games")
+//@RequestMapping("/games")
+@RequestMapping("/list")
 public class GamesController {
 
 	 @Autowired
      private GamesService gamesService;
 	
-	 @GetMapping("/listall")
+//	 @GetMapping("/list")
      	public List<ModelGames> findAll() {
 	
 		return gamesService.getAllGames();
