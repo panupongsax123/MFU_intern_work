@@ -3,7 +3,10 @@ package com.mfu.MFU_intern_work.gamesController;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +23,7 @@ public class GamesController {
      private GamesService gamesService;
 	
 	 @GetMapping("/listall")
-     public List<ModelGames> findAll() {
+     	public List<ModelGames> findAll() {
 	
 		return gamesService.getAllGames();
 	}
@@ -31,7 +34,15 @@ public class GamesController {
 	                return gamesService.postGames(request);
 		} 
 	
+	 @PatchMapping("/update/{id}")
+		public String patchUpdateGames(@RequestBody ModelGames newGames) {
+	         
+	                return gamesService.patchUpdateBook(newGames);
+		}
 	 
-	 
-	 
+	 @DeleteMapping("/delete/{id}")
+		public String deleteGame(@PathVariable int id) {
+			
+	                return gamesService.deleteGame(id);
+		}
 }
