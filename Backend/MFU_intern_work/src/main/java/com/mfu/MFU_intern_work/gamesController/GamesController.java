@@ -16,7 +16,6 @@ import com.mfu.MFU_intern_work.gamesService.GamesService;
 import com.mfu.MFU_intern_work.modelGames.ModelGames;
 
 @RestController
-
 public class GamesController {
 
 	 @Autowired
