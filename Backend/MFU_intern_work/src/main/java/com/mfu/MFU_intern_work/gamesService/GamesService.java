@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.mfu.MFU_intern_work.gamesRepository.GamesRepository;
@@ -41,6 +42,22 @@ public class GamesService {
         return newGames;     
 }
 	
-	
+	public String patchUpdateBook(@RequestBody ModelGames newGames) {
+        
+            System.out.println("Updated game completely.");
+            ModelGames updateGame = repository.getOne(newGames.getId());
+            System.out.println(newGames.getName());
+            repository.save(newGames);
+            return "Updated game completely.";
+
+       
+    }
+
+	public String deleteGame(@PathVariable int id) {
 		
+			System.out.println("Deleted game completely.");
+			repository.deleteById(id);
+            return "Deleted book.";
+	}
 }
+
