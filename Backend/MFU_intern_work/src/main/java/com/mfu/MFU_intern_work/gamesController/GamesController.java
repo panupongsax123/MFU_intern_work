@@ -10,21 +10,19 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mfu.MFU_intern_work.gamesService.GamesService;
 import com.mfu.MFU_intern_work.modelGames.ModelGames;
 
 @RestController
-//@RequestMapping("/games")
-@RequestMapping("/list")
+
 public class GamesController {
 
 	 @Autowired
      private GamesService gamesService;
 	
-//	 @GetMapping("/list")
+	 @GetMapping("/list")	 
      	public List<ModelGames> findAll() {
 	
 		return gamesService.getAllGames();
