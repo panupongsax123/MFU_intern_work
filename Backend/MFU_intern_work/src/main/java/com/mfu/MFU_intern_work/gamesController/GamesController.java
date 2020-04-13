@@ -1,6 +1,7 @@
 package com.mfu.MFU_intern_work.gamesController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,6 +27,12 @@ public class GamesController {
      	public List<ModelGames> findAll() {
 	
 		return gamesService.getAllGames();
+	}
+	 
+	 @GetMapping("/list/{id}")
+     	public Optional<ModelGames> findOne(@PathVariable int id) {
+		
+		return gamesService.findOnebook(id);
 	}
 	 
 	 @PostMapping("/save")

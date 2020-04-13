@@ -1,6 +1,7 @@
 package com.mfu.MFU_intern_work.gamesService;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,13 @@ public class GamesService {
         return valueList;
     }
 	
+	public Optional<ModelGames> findOnebook(@PathVariable int id) {
+		
+        System.out.println("list 1 game.");
+        Optional<ModelGames> value = repository.findById(id);
+        return value;
+	}
+		
 	public ModelGames postGames (@RequestBody ModelGames request) {
 		
 		ModelGames newGames = new ModelGames();            
