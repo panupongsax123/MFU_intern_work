@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Detail Book</h3>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tr>
+                <th class="active text-right" width="120">ID</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th class="active text-right" width="120">Name</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th class="active text-right" width="120">Category</th>
+                <td>{{ game.detail }}</td>
+            </tr>
+            <tr>
+                <th class="active text-right" width="120">Release Date</th>
+                <td>{{ game.price }}</td>
+            </tr>
+            <tr>
+                <th class="active text-right" width="120">Price</th>
+                <td>{{ game.quantity }}</td>
+            </tr>
+            <tr>
+                <th class="active text-right" width="120">Produce By</th>
+                <td>{{ game.quantity }}</td>
+            </tr>
+        </table>
+        <button routerLink="/edit" class="btn btn-success" style="margin-left: 900px;">Edit</button>
+        <button routerLink="/list" class="btn btn-secondary" style="margin-left: 10px;">Back</button>
+    </div>
+</div>
+

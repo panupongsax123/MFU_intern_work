@@ -10,13 +10,12 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private serviceService: ServiceService ,private router : Router) { }
+  constructor(private serviceService: ServiceService, private router: Router) { }
 
   gamelist: Games = new Games();
 
   ngOnInit() {
     this.serviceService.getGames().subscribe(data => {
-      console.log(data);
       this.gamelist = data;
     });
   }

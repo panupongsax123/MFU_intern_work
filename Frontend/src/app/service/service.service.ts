@@ -12,7 +12,12 @@ export class ServiceService {
   Url = 'http://localhost:8080/';
 
   getGames(): Observable<any> {
-    console.log(this.Url + "list");
+    console.log("List all game");
     return this.http.get(this.Url + "list");
   }
+
+  getGamesById(id: number): Observable<any> {
+    return this.http.get(this.Url + "list/" + id);
+  }
+
 }
