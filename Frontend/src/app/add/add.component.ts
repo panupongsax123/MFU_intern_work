@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 import { Games } from '../model/games';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -9,18 +10,21 @@ import { Games } from '../model/games';
 })
 export class AddComponent implements OnInit {
 
-  constructor(private serviceService: ServiceService) { }
+  constructor(private serviceService: ServiceService, private router: Router) { }
 
   add: Games = new Games();
-  
-  addGame(){
-    console.log('Add Complete')
-    this.serviceService.addGame(this.add).subscribe(data => {
-      console.log(data);
-    });
-  }
 
   ngOnInit() {
   }
 
+  addGame() {
+    console.log('Add Complete')
+    this.serviceService.addGame(this.add).subscribe(data => {
+      this.gotoList();
+    });
+  }
+
+  gotoList() {
+    this.router.navigate(['/list']);
+  }
 }

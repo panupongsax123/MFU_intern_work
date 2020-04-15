@@ -20,20 +20,20 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sub = this.route.params.subscribe(params=>{
-      console.log("params : ", params);
+    // this.sub = this.route.params.subscribe(params=>{
+    //   console.log("params : ", params);
         
-      this.id = Number(params.id);
+    //   this.id = Number(params.id);
 
-      console.log("id : ", this.id);
+    //   console.log("id : ", this.id);
       
-      //find Book Detail by Id
-        this.serviceService.getGamesById(this.id).subscribe((data => {
-          this.gamelist = data;
-          console.log("GameDetail : ", data);
+    //   //find Book Detail by Id
+    //     this.serviceService.getGamesById(this.id).subscribe((data => {
+    //       this.gamelist = data;
+    //       console.log("GameDetail : ", data);
           
-        }));
-    });
+    //     }));
+    // });
   }
 
 }

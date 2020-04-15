@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Games } from '../model/games';
 
@@ -22,7 +22,18 @@ export class ServiceService {
   }
 
   addGame(body: Games): Observable<any> {
-    console.log('body: ', body)
-    return this.http.post(this.Url + "add", body);
+    return this.http.post(this.Url + "add", body, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
+    });
   }
+
+  deleteGame(id: number): Observable<any> {
+    alert("Delete Success");
+    return this.http.delete(this.Url + "delete/" + id, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
+    });
+  }
+  
 }
