@@ -1,6 +1,6 @@
     <div class="card">
         <div class="card-header">
-            <h3>Game List</h3>
+            <h3>Game List <button routerLink="/add" class="btn btn-info" style="margin-left: 680px;">Add New Game</button> </h3> 
         </div>
         <div class="card-body">
             <table class="table table-center">
@@ -11,12 +11,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center" *ngFor="let data of gamelist">
-                        <td>{{data.id}}</td>
-                        <td>{{data.name}}</td>
+                    <tr class="text-center" *ngFor="let game of gamelist ">
+                        <td>{{game.id}}</td>
+                        <td>{{game.name}}</td>
                         <td>
-                            <button (click)="Edit(data.id)" class="btn btn-warning" style="margin-left: 10px;">Detail</button>
-                            <button (click)="Delete()"class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                            <button routerLink="/detail" class="btn btn-warning" style="margin-left: 10px;">Detail</button>
+                            <button (click)="deleteGame(game)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
                         </td>
                     </tr>
                 </tbody>
