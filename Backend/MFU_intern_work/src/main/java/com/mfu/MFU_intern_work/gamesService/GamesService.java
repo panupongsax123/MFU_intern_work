@@ -65,11 +65,6 @@ public class GamesService {
 		
 			System.out.println("Deleted game completely.");
 			repository.deleteById(id);
-<<<<<<< HEAD
             return "Deleted game completely.";
-=======
-            return "Deleted game.";
->>>>>>> 44cfa5c5f75394a665fde722d7f8a87f4b1eb319
 	}
 }
-
