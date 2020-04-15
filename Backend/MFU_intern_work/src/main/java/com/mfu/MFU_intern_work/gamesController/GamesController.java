@@ -33,7 +33,7 @@ public class GamesController {
 		return gamesService.findOnebook(id);
 	}
 	 
-	 @PostMapping("/save")
+	 @PostMapping("/add")
 		public ModelGames newGames(@RequestBody ModelGames request) {
 			                        
 	                return gamesService.postGames(request);
