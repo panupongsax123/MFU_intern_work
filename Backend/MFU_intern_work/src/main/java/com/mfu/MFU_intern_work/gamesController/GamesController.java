@@ -40,7 +40,7 @@ public class GamesController {
 	                return gamesService.postGames(request);
 		} 
 	
-	 @PatchMapping("/update/{id}")
+	 @PatchMapping("/edit/{id}")
 		public String patchUpdateGames(@RequestBody ModelGames newGames) {
 	         
 	                return gamesService.patchUpdateBook(newGames);

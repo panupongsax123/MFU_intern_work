@@ -8,6 +8,7 @@ public class MfuInternWorkApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MfuInternWorkApplication.class, args);
+		
 	}
 
 }
