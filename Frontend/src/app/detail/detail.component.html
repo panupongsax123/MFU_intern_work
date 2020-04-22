@@ -1,36 +1,39 @@
 <div class="card">
     <div class="card-header">
-        <h3>Detail Game</h3>
+        <h3>Detail of {{games.name}}</h3>
     </div>
-    <div class="card-body">
+    <div class="card-body" *ngIf="games">
         <table class="table">
             <tr>
                 <th class="active text-right" width="120">ID</th>
-                <td></td>
+                <td> {{games.id}}</td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Name</th>
-                <td></td>
+                <td> {{games.name}}</td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Category</th>
-                <td></td>
+                <td> {{games.category}}</td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Release Date</th>
-                <td></td>
+                <td> {{games.release_date}}</td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Price</th>
-                <td></td>
+                <td> {{games.price}}</td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Produce By</th>
+                <td> {{games.produce_by}}</td>
+            </tr>
+
+            <tr>
                 <td></td>
+                <td><button (click)="gotogameEdit(id)" class="btn btn-success" style="margin-right: 10px;">Edit</button>
+                    <button routerLink="/list" class="btn btn-secondary">Back</button></td>
             </tr>
         </table>
-        <button routerLink="/edit" class="btn btn-success" style="margin-left: 900px;">Edit</button>
-        <button routerLink="/list" class="btn btn-secondary" style="margin-left: 10px;">Back</button>
     </div>
 </div>
-

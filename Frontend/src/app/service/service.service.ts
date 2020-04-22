@@ -10,10 +10,9 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  Url = 'http://localhost:8080/';
+  Url = 'http://localhost:8080/games/';
 
   getGames(): Observable<any> {
-    console.log("List all game");
     return this.http.get(this.Url + "list");
   }
 
@@ -28,12 +27,20 @@ export class ServiceService {
     });
   }
 
+  editGame(id: number, body: Games): Observable<any> {
+    return this.http.patch(this.Url + "edit/" + id , body, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
+    });
+
+  }
+
   deleteGame(id: number): Observable<any> {
-    alert("Delete Success");
+    alert("Delete Successful");
     return this.http.delete(this.Url + "delete/" + id, {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
       responseType: 'text'
     });
   }
-  
+
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Games } from '../model/games';
 import { ServiceService } from '../service/service.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -10,30 +11,39 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
+  // game: Observable<Games[]>;
+
   constructor(private serviceService: ServiceService, private router: Router) { }
 
-  gamelist: Games = new Games();
-  game : Games[];
+  
+  gamelist : Games[] = [];
+  
+  
 
   ngOnInit() {
+    console.log("List all game");
     this.serviceService.getGames().subscribe(data => {
       this.gamelist = data;
     });
 
-    this.fetchData();
   }
 
   fetchData() {
-    this.serviceService.getGames().subscribe(data =>{
-        this.gamelist = data;
+    this.serviceService.getGames().subscribe(data => {
+      this.gamelist = data;
     });
 
   }
 
+  gameDetails(id: number) {
+    this.router.navigate(['list', id]);
+  }
+
   deleteGame(game: Games): void {
     console.log("Delete Game");
-    this.serviceService.deleteGame(game.id).subscribe( () => { this.fetchData();
-      }) 
+    this.serviceService.deleteGame(game.id).subscribe(() => {
+      this.fetchData();
+    })
   };
 
 

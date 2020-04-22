@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <th class="active text-right" width="120">Release Date</th>
-                <td><input id="grelease" name="ginput3" [(ngModel)]="add.release_date"></td>
+                <td><input id="grelease" name="ginput3" [(ngModel)]="add.release_date"> [ex: 12 September 2020] </td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Price</th>
@@ -24,8 +24,11 @@
                 <th class="active text-right" width="120">Produce By</th>
                 <td><input id="gproduce" name="ginput5" [(ngModel)]="add.produce_by"></td>
             </tr>
+            <tr>
+                <td></td>
+                <td><button (click)="addGame()" class="btn btn-success" style="margin-right: 10px;">Confirm</button> <button routerLink="/list" class="btn btn-secondary">Back</button></td>
+
+            </tr>
         </table>
-        <button (click)="addGame()" class="btn btn-success" style="margin-left: 900px;">Confirm</button>
     </div>
 </div>
-

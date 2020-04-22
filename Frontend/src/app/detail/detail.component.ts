@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service/service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Games } from '../model/games';
 
 @Component({
@@ -11,29 +11,26 @@ import { Games } from '../model/games';
 export class DetailComponent implements OnInit {
 
   constructor(private serviceService: ServiceService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute, private router: Router) { }
 
-  gamelist: Games = new Games();
-  edit: Games = new Games();
-  sub: any;
+  games : Games;
   id: number;
+
 
   ngOnInit() {
 
-    // this.sub = this.route.params.subscribe(params=>{
-    //   console.log("params : ", params);
-        
-    //   this.id = Number(params.id);
+    this.games = new Games();
 
-    //   console.log("id : ", this.id);
-      
-    //   //find Book Detail by Id
-    //     this.serviceService.getGamesById(this.id).subscribe((data => {
-    //       this.gamelist = data;
-    //       console.log("GameDetail : ", data);
-          
-    //     }));
-    // });
+    this.id = this.route.snapshot.params['id'];
+    
+    this.serviceService.getGamesById(this.id)
+      .subscribe(data => {
+        console.log("Detail of "+ this.id)
+        this.games = data;
+      }, );
   }
 
+  gotogameEdit(body: Games) {
+    this.router.navigate(['edit', body]);
+  }
 }

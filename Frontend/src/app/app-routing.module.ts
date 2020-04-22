@@ -10,8 +10,8 @@ import { AddComponent } from './add/add.component';
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
   { path: 'home', component: HomepageComponent },
-  { path: 'detail', component: DetailComponent },
-  { path: 'edit', component: EditComponent },
+  { path: 'list/:id', component: DetailComponent },
+  { path: 'edit/:id', component: EditComponent },
   { path: 'add', component: AddComponent },
   { path: 'about', component: AboutComponent },
   {

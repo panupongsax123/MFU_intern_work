@@ -1,36 +1,37 @@
 <div class="card">
     <div class="card-header">
-        <h3>Edit Game</h3>
+        <h3>Edit {{gamelist.name}}</h3>
     </div>
     <div class="card-body">
         <table class="table">
             <tr>
-                <th class="active text-right" width="120">ID</th>
-                <td><input ></td>
-            </tr>
-            <tr>
                 <th class="active text-right" width="120">Name</th>
-                <td><input></td>
+                <td><input id="gname" name="ginput1" [(ngModel)]="edit.name" [value]="gamelist.name"></td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Category</th>
-                <td><input></td>
+                <td><input id="gcategory" name="ginput1" [(ngModel)]="edit.category" [value]="gamelist.category"></td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Release Date</th>
-                <td><input></td>
+                <td><input id="grelease" name="ginput1" [(ngModel)]="edit.release_date" [value]="gamelist.release_date"></td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Price</th>
-                <td><input></td>
+                <td><input id="gprice" name="ginput1" [(ngModel)]="edit.price" [value]="gamelist.price"></td>
             </tr>
             <tr>
                 <th class="active text-right" width="120">Produce By</th>
-                <td><input></td>
+                <td><input id="gproduce" name="ginput1" [(ngModel)]="edit.produce_by" [value]="gamelist.produce_by"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button routerLink="/list" class="btn btn-secondary">Back</button></td>
             </tr>
         </table>
-        <button routerLink="/edit" class="btn btn-success" style="margin-left: 900px;">Confirm</button>
-        <button routerLink="/list" class="btn btn-secondary" style="margin-left: 10px;">Back</button>
     </div>
 </div>
 
+<!-- <button (click)="editGame(id)" class="btn btn-success" style="margin-right: 10px;">Confirm</button> -->
