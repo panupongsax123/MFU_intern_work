@@ -7,3 +7,13 @@ export class Games {
         produce_by:string;
         static id: any;
 }
+
+export class ModelGames {
+        id:number;
+        name:string;
+        category:string;
+        release_date:string;
+        price:number;
+        produce_by:string;
+        static id: any;
+}
