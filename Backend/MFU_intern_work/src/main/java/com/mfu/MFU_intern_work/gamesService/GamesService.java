@@ -24,10 +24,10 @@ public class GamesService {
         return valueList;
     }
 	
-	public Optional<ModelGames> findOnebook(@PathVariable int id) {
+	public ModelGames findOnegame(@PathVariable int id) {
 		
         System.out.println("list 1 game.");
-        Optional<ModelGames> value = repository.findById(id);
+        ModelGames value = repository.findById(id);
         return value;
 	}
 		
@@ -50,10 +50,9 @@ public class GamesService {
         return newGames;     
 }
 	
-	public String patchUpdateBook(@RequestBody ModelGames newGames) {
+	public String postUpdateGames(@RequestBody ModelGames newGames) {
         
             System.out.println("Updated game completely.");
-            ModelGames updateGame = repository.getOne(newGames.getId());
             System.out.println(newGames.getName());
             repository.save(newGames);
             return "Updated game completely.";

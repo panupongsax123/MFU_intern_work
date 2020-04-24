@@ -8,5 +8,6 @@ import com.mfu.MFU_intern_work.modelGames.ModelGames;
 
 public interface GamesRepository extends JpaRepository<ModelGames, Integer>{
 
-	List<ModelGames> findAll(); 
+	List<ModelGames> findAll();
+	ModelGames findById(int id);
 }

@@ -1,24 +1,22 @@
 package com.mfu.MFU_intern_work.gamesController;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.mfu.MFU_intern_work.gamesService.GamesService;
 import com.mfu.MFU_intern_work.modelGames.ModelGames;
 
 @RestController
-public class GamesController {
-
+@RequestMapping(value = "games")
+public class GamesController {		
+	
 	 @Autowired
      private GamesService gamesService;
 	
@@ -29,9 +27,9 @@ public class GamesController {
 	}
 	 
 	 @GetMapping("/list/{id}")
-     	public Optional<ModelGames> findOne(@PathVariable int id) {
+     	public ModelGames findOne(@PathVariable int id) {
 		
-		return gamesService.findOnebook(id);
+		return gamesService.findOnegame(id);
 	}
 	 
 	 @PostMapping("/add")
@@ -40,10 +38,11 @@ public class GamesController {
 	                return gamesService.postGames(request);
 		} 
 	
-	 @PatchMapping("/edit/{id}")
-		public String patchUpdateGames(@RequestBody ModelGames newGames) {
+	 @CrossOrigin(origins = "http://localhost:4200")
+	 @PostMapping("/edit/{id}")
+		public String postUpdateGames(@RequestBody ModelGames newGames) {
 	         
-	                return gamesService.patchUpdateBook(newGames);
+	                return gamesService.postUpdateGames(newGames);
 		}
 	 
 	 @CrossOrigin(origins = "http://localhost:4200")
