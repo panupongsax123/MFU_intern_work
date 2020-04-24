@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Games } from '../model/games';
+import { Games, ModelGames } from '../model/games';
 import { ServiceService } from '../service/service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -11,32 +11,46 @@ import { ActivatedRoute } from '@angular/router';
 export class EditComponent implements OnInit {
 
   constructor(private serviceService: ServiceService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute, private router: Router) { }
 
-    gamelist: Games = new Games();
-    edit: Games = new Games();
-    sub: any;
-    id: number;
+  gamelist: Games = new Games();
+  // gamelist: Games = new Games();
+  edit: ModelGames = new ModelGames();
+  sub: any;
+  id: number;
 
   ngOnInit() {
 
 
-    this.sub = this.route.params.subscribe(params=>{ 
+    this.sub = this.route.params.subscribe(params => {
       this.id = Number(params.id);
       console.log("Edit id :", this.id);
-        this.serviceService.getGamesById(this.id).subscribe((data => {
-          this.gamelist = data;
-          
-        }));
+      this.serviceService.getGamesById(this.id).subscribe((data => {
+
+        this.edit = data;
+        this.edit.id = data.id;
+        this.edit.name = data.name;
+        this.edit.category = data.category;
+        this.edit.release_date = data.release_date;
+        this.edit.price = data.price;
+        this.edit.produce_by = data.produce_by;
+        
+
+      }));
+
     });
   }
 
-  editGame(id, body){
-    console.log('Update Complete Data: => ',this.gamelist)
-    this.serviceService.editGame(id, body).subscribe(data => {
-      console.log(data);
-      this.gamelist = data;
+  editGame(id) {
+    console.log('Update Complete Data: => ', this.edit)
+    this.serviceService.editGame(id, this.edit).subscribe(data => {
+
+      this.gotoList();
     });
+  }
+
+  gotoList() {
+    this.router.navigate(['/list']);
   }
 
 }

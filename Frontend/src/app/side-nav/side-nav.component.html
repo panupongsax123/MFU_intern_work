@@ -8,9 +8,21 @@
 
         </mat-toolbar>
         <mat-nav-list>
-            <a mat-list-item routerLink="/home" routerLinkActive="active"><mat-icon>home</mat-icon> </a> 
-            <a mat-list-item routerLink="/list" routerLinkActive="active"><mat-icon>sort</mat-icon>  </a>
-            <a mat-list-item routerLink="/about" routerLinkActive="active"><mat-icon>emoji_people</mat-icon></a>
+            <a mat-list-item routerLink="/home" routerLinkActive="active">
+                <h4 style="margin-top: 15px;"> <span class="material-icons" >
+                        home
+                    </span> Home </h4>
+            </a>
+            <a mat-list-item routerLink="/list" routerLinkActive="active">
+                <h4 style="margin-top: 15px;"> <span class="material-icons" >
+                    sort
+                </span> List </h4>
+            </a>
+            <a mat-list-item routerLink="/contacts" routerLinkActive="active">
+                <h4 style="margin-top: 15px;"> <span class="material-icons" >
+                    contacts
+                </span> Contacts </h4>
+            </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -19,7 +31,7 @@
                 *ngIf="isHandset$ | async">
                 <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
-            <button class="btn btn-success my-2 my-sm-0">SIGN IN</button> 
+            <button type="button" class="btn btn-success " routerLink="/sign-in">SIGN IN</button>
 
         </mat-toolbar>
         <!-- Add Content Here -->

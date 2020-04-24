@@ -28,7 +28,7 @@ export class ServiceService {
   }
 
   editGame(id: number, body: Games): Observable<any> {
-    return this.http.patch(this.Url + "edit/" + id , body, {
+    return this.http.post(this.Url + "edit/" + id, body, {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
       responseType: 'text'
     });

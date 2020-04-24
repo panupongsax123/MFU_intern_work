@@ -25,7 +25,7 @@ export class DetailComponent implements OnInit {
     
     this.serviceService.getGamesById(this.id)
       .subscribe(data => {
-        console.log("Detail of "+ this.id)
+        console.log("Detail of : "+ this.id)
         this.games = data;
       }, );
   }
