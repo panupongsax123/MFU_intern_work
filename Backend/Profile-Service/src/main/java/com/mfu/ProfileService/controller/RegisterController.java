@@ -15,7 +15,7 @@ import com.mfu.ProfileService.service.RegisterService;
 
 
 @RestController
-@RequestMapping("games")
+@RequestMapping("users")
 
 public class RegisterController {
 	

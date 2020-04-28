@@ -3,13 +3,13 @@ server:
 
 
 zuul:
-#  ignored-services: '*'
+  ignored-services: '*'
   routes:
-    Profile-Service:
-      path: /games/**
-      stripPrefix: false
     Content-Service:
       path: /games/**
+      stripPrefix: false
+    Profile-Service:
+      path: /users/**
       stripPrefix: false
       
 eureka:
