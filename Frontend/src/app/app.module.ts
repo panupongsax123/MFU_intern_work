@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -23,6 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table'; 
+import { CustomMaterialModule } from './core/material.module';
 
 
 @NgModule({
@@ -53,6 +56,11 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatTableModule,
+    CustomMaterialModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType:'danger' // set defaults here
+    }),
 
 
   ],

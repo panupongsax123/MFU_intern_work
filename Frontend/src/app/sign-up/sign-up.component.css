@@ -1,0 +1,9 @@
+.center {
+    display: flex;
+    height: 400px;
+    /* background-color: #ff1124; */
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
