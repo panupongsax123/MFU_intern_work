@@ -11,14 +11,16 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
 
-  // game: Observable<Games[]>;
 
   constructor(private serviceService: ServiceService, private router: Router) { }
 
   
   gamelist : Games[] = [];
-  
-  
+
+  public popoverTitle:string = 'Confirm to delete';
+  public popoverMessage:string = 'Do you want to really delete?';
+  public confirmClicked:boolean = false;
+  public cancelClicked:boolean = false;
 
   ngOnInit() {
     console.log("List all game");

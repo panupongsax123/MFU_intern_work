@@ -36,7 +36,7 @@ export class ServiceService {
   }
 
   deleteGame(id: number): Observable<any> {
-    alert("Delete Successful");
+    // alert("Delete Successful");
     return this.http.delete(this.Url + "delete/" + id, {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
       responseType: 'text'

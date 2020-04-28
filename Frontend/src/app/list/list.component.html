@@ -18,8 +18,18 @@
                     <td>{{game.id}}</td>
                     <td>{{game.name}}</td>
                     <td>
-                        <button (click)="gameDetails(game.id)" class="btn btn-warning" style="margin-left: 10px;">Detail</button>
-                        <button (click)="deleteGame(game)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                        <button (click)="gameDetails(game.id)" class="btn btn-warning"
+                            style="margin-left: 10px;">Detail</button>
+
+                        <!-- <button (click)="deleteGame(game)" class="btn btn-danger"
+                            style="margin-left: 10px;">Delete</button> -->
+
+                        <button class="btn btn-danger" style="margin-left: 10px;" mwlConfirmationPopover
+                            [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage" placement="top"
+                            (confirm)="deleteGame(game)" (cancel)="cancelClicked = true ">
+                            Delete
+                        </button>
+
                     </td>
                 </tr>
                 <tr class="text-center">
