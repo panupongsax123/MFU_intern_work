@@ -3,12 +3,15 @@ server:
 
 
 zuul:
-  ignored-services: '*'
+#  ignored-services: '*'
   routes:
-   MFU_Games-service:
-     path: /games/**
-     stripPrefix: false
-
+    Profile-Service:
+      path: /games/**
+      stripPrefix: false
+    Content-Service:
+      path: /games/**
+      stripPrefix: false
+      
 eureka:
    client:
       serviceUrl:

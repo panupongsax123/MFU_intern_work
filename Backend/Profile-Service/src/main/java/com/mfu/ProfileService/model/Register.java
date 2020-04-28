@@ -1,4 +1,4 @@
-package com.mfu.MFU_intern_work.model_signIn;
+package com.mfu.ProfileService.model;
 
 import java.io.Serializable;
 
@@ -12,10 +12,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="register")
 
-public class SignIn implements Serializable{
+public class Register implements Serializable{
 
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
+		
+		@Column(name="id")
+		private int id;
 		
 		@Column(name="username")
         private String username;
@@ -29,15 +32,24 @@ public class SignIn implements Serializable{
 		@Column(name="email")
         private String email;
 		
-		 public SignIn() {
+		 public Register() {
 		    }
 
-		public SignIn(String username, String password, String nickname, String email) {
+		public Register(int id, String username, String password, String nickname, String email) {
 			super();
+			this.id = id;
 			this.username = username;
 			this.password = password;
 			this.nickname = nickname;
 			this.email = email;
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
 		}
 
 		public String getUsername() {
@@ -71,10 +83,8 @@ public class SignIn implements Serializable{
 		public void setEmail(String email) {
 			this.email = email;
 		}
+
+		
 		  
 	
 }
-
-
-
-

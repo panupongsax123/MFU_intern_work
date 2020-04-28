@@ -11,7 +11,7 @@
 	<groupId>com.mfu</groupId>
 	<artifactId>MFU_intern_work</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MFU_intern_work</name>
+	<name>Profile-Service(CRUD)</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -81,12 +81,6 @@
             <version>2.2.2.RELEASE</version>
         </dependency>
         
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>1.4.7.RELEASE</version>
-        </dependency>-->
-		
 	</dependencies>
 	
 	<dependencyManagement>
