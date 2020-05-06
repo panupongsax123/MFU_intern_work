@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Games } from '../model/games';
+import { Games } from '../modelGames/games';
 import { ServiceService } from '../service/service.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';

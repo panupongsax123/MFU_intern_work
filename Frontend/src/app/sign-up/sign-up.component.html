@@ -1,45 +1,82 @@
-<div class="center">
-    <mat-card class="example-card">
-        <mat-card-header>
-            <mat-card-title>Sign Up</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <form class="example-form">
-                <table class="example-full-width" cellspacing="0">
-                    <tr>
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Username" name="username" required>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Password" type="password" name="password" required>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Nickname" name="nickname" required>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Email" type="email" name="email" required>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                </table>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css"></style>
+</head>
+
+<body>
+    <br><br><br><br>
+    <div class="signup-form">
+        <form method="post" [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+            <h2>Sign Up</h2>
+            <p>Please fill in this form to create an account!</p>
+            <hr>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6"><input type="text" name="username" formControlName="username"
+                            autocomplete="off" class="form-control" placeholder="Username"></div>
+                    <div class="col-xs-6"><input type="text" name="nickname" formControlName="nickname"
+                            autocomplete="off" class="form-control" placeholder="Nickname" ></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" autocomplete="off" class="form-control" name="password"
+                    formControlName="password" placeholder="Password" >
+            </div>
+            <div class="form-group">
+                <input type="email" autocomplete="off" class="form-control" name="email" formControlName="email"
+                    placeholder="Email" >
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+            </div>
+        </form>
+        <div class="hint-text">Already have an account? <a routerLink="/sign-in">Sign In here</a></div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- <h2 class="text-center">Registration</h2>
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" formControlName="username" autocomplete="off"
+                        class="form-control input-sm" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="nickname">Nickname</label>
+                    <input type="text" name="nickname" formControlName="nickname" autocomplete="off"
+                        class="form-control input-sm" placeholder="Nickname">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" formControlName="password" autocomplete="off"
+                        class="form-control input-sm" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" formControlName="email" autocomplete="off"
+                        class="form-control input-sm" placeholder="Email">
+                </div>
+                <button type="submit" class="btn btn-success">Register</button>
             </form>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button color="primary">Confirm</button>
-            <button mat-raised-button color="primary" routerLink="/sign-in">Back</button>
-        </mat-card-actions>
-    </mat-card>
-</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div> -->

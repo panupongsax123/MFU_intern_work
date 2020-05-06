@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Games, ModelGames } from '../model/games';
+import { Games, ModelGames } from '../modelGames/games';
 import { ServiceService } from '../service/service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -14,7 +14,6 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute, private router: Router) { }
 
   gamelist: Games = new Games();
-  // gamelist: Games = new Games();
   edit: ModelGames = new ModelGames();
   sub: any;
   id: number;

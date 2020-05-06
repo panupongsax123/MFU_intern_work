@@ -1,3 +1,54 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="menu" class="menu" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div>
+    <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+      <li class="nav-item">
+        <a type="button" routerLink="/sign-in" *ngIf="loginbtn" routerLinkActive="active">
+          <mat-icon class="icon">input</mat-icon>
+          <span>Log in</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">
+          <mat-icon class="icon">person</mat-icon>
+          <span>User</span>
+          &nbsp; &nbsp;
+          <mat-icon class="icon">exit_to_app</mat-icon>
+          <span>Log out</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-<app-side-nav></app-side-nav>
-<router-outlet></router-outlet>
+
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [disableClose]="false" mode="over" #sidenav>
+    <mat-nav-list>
+      <a id="home" mat-list-item [routerLink]="['/home']" (click)="sidenav.close()" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon matListAvatar>home</mat-icon>
+        <h3 matLine>Home</h3>
+        <p matLine>Show homw page</p>
+      </a>
+      <a id="sampleData" mat-list-item [routerLink]="['/list']" (click)="sidenav.close()" routerLinkActive="active">
+        <mat-icon matListAvatar>view_list</mat-icon>
+        <h3 matLine>List</h3>
+        <p matLine>List all games</p>
+      </a>
+      <a id="home" mat-list-item [routerLink]="['/contacts']" (click)="sidenav.close();" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon matListAvatar>supervised_user_circle</mat-icon>
+        <h3 matLine>Contacts</h3>
+        <p matLine>Contacts Developer</p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
