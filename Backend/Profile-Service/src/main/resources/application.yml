@@ -1,20 +1,14 @@
 server:
-     port: 8083
+    port: 8083
 
 spring:
     application:
-      name: Profile-Service
-#    cloud:
-#      config:
-#        enabled: false        
-
+      name: Profile-Service  
         
 eureka:
    client:
      serviceUrl:
        defaultZone: http://localhost:8081/eureka/
-#     healthcheck:
-#      enabled: true
-#     instance:
-#      leaseRenewalIntervalInSeconds: 5
-#      lease-expiration-duration-in-seconds: 5
+     instance:
+      leaseRenewalIntervalInSeconds: 5
+      lease-expiration-duration-in-seconds: 5

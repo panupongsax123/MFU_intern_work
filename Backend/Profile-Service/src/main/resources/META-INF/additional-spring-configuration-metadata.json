@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "Profile-Service.ribbon.eureka.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'Profile-Service.ribbon.eureka.enabled'"
+  },
+  {
+    "name": "Profile-Service.ribbon.list-of-servers",
+    "type": "java.lang.String",
+    "description": "A description for 'Profile-Service.ribbon.list-of-servers'"
+  },
+  {
+    "name": "Profile-Service.ribbon.-server-list-refresh-interval",
+    "type": "java.lang.String",
+    "description": "A description for 'Profile-Service.ribbon.-server-list-refresh-interval'"
+  },
+  {
+    "name": "eureka.client.instance.lease-renewal-interval-in-seconds",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.client.instance.lease-renewal-interval-in-seconds'"
+  },
+  {
+    "name": "eureka.client.instance.lease-renewal-interval-in-seconds",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.client.instance.lease-renewal-interval-in-seconds'"
+  },
+  {
+    "name": "eureka.client.instance.lease-expiration-duration-in-seconds",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.client.instance.lease-expiration-duration-in-seconds'"
+  }
+]}
