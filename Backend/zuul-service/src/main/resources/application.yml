@@ -11,6 +11,9 @@ zuul:
     Profile-Service:
       path: /users/**
       stripPrefix: false
+    Client-Side Load-Balancer:
+      path: /invoke/**
+      stripPrefix: false
       
 eureka:
    client:
