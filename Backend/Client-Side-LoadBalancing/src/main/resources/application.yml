@@ -1,0 +1,23 @@
+server:
+     port: 8084
+
+spring:
+    application:
+      name: Client-Side Load-Balancer
+        
+eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8081/eureka/
+
+Profile-Service:
+         ribbon:
+          eureka:
+            enabled: true
+          listOfServers: localhost:9999,localhost:8083,localhost:9091,localhost:9092
+
+Content-Service:
+         ribbon:
+          eureka:
+            enabled: true
+          listOfServers: localhost:9999,localhost:8082,localhost:9093,localhost:9094   
